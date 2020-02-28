@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <!-- =============================================== -->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header)-->
+          <section class="content">
+            <h1>Listado de Administradores
+            </h1>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="box">
+                  <div class="box-header">
+                    <h3 class="box-title">Maneja los usuarios en esta seccion</h3>
+                  </div>
+                  <!-- /.box-header-->
+                  <div class="box-body">
+                    <table id="registros" class="table table-bordered table-striped">
+                      <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Usuario</th>
+                        <th>Nombre</th>
+                        <th>Acciones</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                        {% for user in users %}
+                      <tr>
+                          <td>
+                            {{ user.profile_image }}
+                          </td>
+                          <td>
+                            {{ user.email }}
+                          </td>
+                          <td>
+                            {{ user.user_name }}
+                          </td>
+                          <td>
+                              {{ user.password_hash }}
+                            </td>
+
+                          <td>
+                            <a href="/editar_admin" class="btn bg-orange btn-flat margin"><i class="fa fa-pencil"></i>
+                            </a>
+                            <a href="#" class="btn bg-maroon btn-flat margin borrar-registro ">
+                              <i class="fa fa-trash"></i>
+                            </a>
+                          </td>
+                      </tr>
+                      {% endfor %}
+
+                      </tbody>
+
+                      <tfoot>
+                      <tr>
+                        <th>ID</th>
+                        <th>Usuario</th>
+                        <th>Nombre</th>
+                        <th>Acciones</th>
+                      </tr>
+                      </tfoot>
+
+                    </table>
+
+                  </div>
+                  <!--ç /.box-body-->
+                </div>
+                <!-- /.box -->
+
+        <!-- /.box-body-->
+
+      </div>
+      <!-- /.box-->
+
+    </section>
+    <!-- /.content-->
+
+  </div>
+  <!-- /.content-wrapper -->
+
+{% endblock %}

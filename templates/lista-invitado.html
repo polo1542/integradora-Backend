@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <!-- =============================================== -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+         Listado de invitados
+        <small></small>
+      </h1>
+   <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Administra la lista de invitados y su información</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="registros" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Biografía</th>
+                  <th>Imagen</th>
+                  <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                  {% for invitado in invitados %}
+                  <tr>
+                     <td>
+                       {{ invitado.nombre }}
+                     </td>
+                       <td>
+                         {{ invitado.apellido }}
+                       </td>
+                       <td>
+                         {{ invitado.descripcion }}
+                       </td>
+                       <td>
+                        {{ invitado.imagen }}
+                      </td>
+                       <td>
+                         {{ invitado.evento.nombre }}
+                       </td> <!--##############-->
+                       <td>
+                         <a href="{{ url_for('invitado.update_invitado', id_invitado=invitado.id) }}" class="btn bg-orange btn-flat margin"><i class="fa fa-pencil"></i>
+                         </a>
+                         <form action="{{url_for('invitado.delete_invitado', id_invitado=invitado.id)}}" method="post">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                            </form>
+                       </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Biografía</th>
+                  <th>Imagen</th>
+                  <th>Acciones</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  {% endblock %}

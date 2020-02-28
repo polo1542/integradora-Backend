@@ -1,0 +1,64 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+
+<section class="seccion contenedor">
+    <h2>La mejor opción al alcance de tus manos</h2>
+    <p>
+         En este curso nuestros invitados, te enseñará las posibilidades que ofrece la cerámica y las técnicas para trabajarla, de modo que puedas moldear tus ideas y crear con tus manos cualquier pieza creativa que se te ocurra.
+
+Aprenderás otras formas de usar la cerámica de manera creativa y mientras diseñas y das forma a tus propias creaciones. Lola te enseñará a un set de desayuno, pero las posibilidades son infinitas a la hora de trabajar con cerámica, la única limitación a la hora de elegir la pieza final es tu propia imaginación.
+    </p>
+</section> <!--seccion-->
+
+<section class="seccion contenedor">
+  <h2>Galeria de Fotos</h2> 
+<div class="slider">
+      <ul>
+        <li> 
+            <a href="{{ url_for('static', filename='../static/img/galeria/01.jpg') }}" data-lightbox="galeria">
+               <img src="{{ url_for('static', filename='../static/img/galeria/01.jpg') }}" alt="">
+            </a>
+       </li>
+       <li>
+            <a href="{{ url_for('static', filename='../static/img/galeria/15.jpg') }}" data-lightbox="galeria">
+               <img src="{{ url_for('static', filename='../static/img/galeria/15.jpg') }}" alt="">
+            </a>
+       </li>
+       <li>
+            <a href="{{ url_for('static', filename='../static/img/galeria/04.jpg') }}" data-lightbox="galeria">
+               <img src="{{ url_for('static', filename='../static/img/galeria/04.jpg') }}" alt="">
+            </a>
+          
+       </li>
+       <li>
+            <a href="{{ url_for('static', filename='../static/img/galeria/09.jpg') }}" data-lightbox="galeria">
+               <img src="{{ url_for('static', filename='../static/img/galeria/09.jpg') }}" alt="">
+            </a>
+       </li>
+       <li>
+            <a href="{{ url_for('static', filename='../static/img/galeria/14.jpg') }}" data-lightbox="galeria">
+               <img src="{{ url_for('static', filename='../static/img/galeria/14.jpg') }}" alt="">
+            </a>
+       </li>
+       <li>
+            <a href="{{ url_for('static', filename='../static/img/galeria/13.jpg') }}" data-lightbox="galeria">
+               <img src="{{ url_for('static', filename='../static/img/galeria/13.jpg') }}" alt="">
+            </a>
+       </li>
+       <li>
+            <a href="{{ url_for('static', filename='../static/img/galeria/12.jpg') }}" data-lightbox="galeria">
+               <img src="{{ url_for('static', filename='../static/img/galeria/12.jpg') }}" alt="">
+            </a>
+       </li>
+       <li>
+            <a href="{{ url_for('static', filename='../static/img/galeria/11.jpg') }}" data-lightbox="galeria">
+               <img src="{{ url_for('static', filename='../static/img/galeria/11.jpg') }}" alt="">
+            </a>
+       </li>
+      </ul>
+    </div>
+
+    </section>
+{% endblock %}

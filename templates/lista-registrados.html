@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <!-- =============================================== -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+         Listado de personas registradas
+        <small></small>
+      </h1>
+   <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Maneja los visitantes registrados</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="registros" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Email</th>
+                  <th>Fecha Registro </th>
+                  <th>Artículos</th>
+                  <th>Talleres</th>
+                  <th>Regalo</th>
+                  <th>Compra</th>
+                  <th>Acciones</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                  {% for registrados in regis %}
+                  <tr>
+                     <td>
+                       {{ registrados.id_registrado }}
+
+                     </td>
+                       <td>
+                         {{ registrados.nombre_registrado }}
+
+                       </td>
+
+                       <td>
+                         {{ registrados.apellido_registrado }}
+
+                       </td>
+
+                       <td>
+                         {{ registrados.email_registrado }}
+
+                       </td>
+
+                       <td>
+                         {{ registrados.fecha_registro }}
+
+                       </td>
+
+                       <td>
+                         {{ registrados.talleres_registrados }}
+
+                       </td>
+
+                       <td>
+                         {{ registrados.total_pagado }}
+
+                       </td>
+                       <td>
+                         {{ registrados.regalo }}
+                       </td>
+                       <td>
+                         <a href="/editar_registrado" class="btn bg-orange btn-flat margin"><i class="fa fa-pencil"></i>
+                         </a>
+                         <a href="#" class="btn bg-maroon btn-flat margin borrar-registro ">
+                           <i class="fa fa-trash"></i>
+                         </a>
+                       </td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Email</th>
+                  <th>Fecha Registro </th>
+                  <th>Artículos</th>
+                  <th>Talleres</th>
+                  <th>Regalo</th>
+                  <th>Compra</th>
+                  <th>Acciones</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+{% endblock %}

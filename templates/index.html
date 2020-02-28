@@ -1,0 +1,229 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="seccion contenedor">
+    <h2>La mejor opción al alcance de tus manos</h2>
+    <p>
+      Empresa 100% Mexicana, en donde nos dedicamos a enseñar el valor de la ceramica como
+        un arte, una forma de expresion de nuestros alumnos y clientes
+    </p>
+</section> <!--seccion-->
+
+  <section class="programa">
+    <div class="contenedor-video">
+        <video autoplay muted loop poster="../static/bg-talleres.jpg">
+        <source src="../static/video/video.mp4" type="video/mp4">
+        <source src="../static/video/video.webm" type="video/webm">
+        <source src="../static/video/video.ogv" type="video/ogv">
+        </video>
+    </div><!--.contenedor video-->
+    <!--####################################################################################-->
+        <div class="contenido-programa">
+          <div class="contenedor">
+            <div class="programa-evento">
+              <h2>Eventos</h2>
+              <nav class="menu-programa">
+                {% for categoria in categorias %}
+                <a href="#"><i class="{{categoria.icono}}" aria hidden="true"></i>{{categoria.nombre}}</a>
+                <!--<a href="#"><i class="{{ categoria.icono }}" aria hidden="true"></i> {{ categoria.nombre}}</a>
+                <a href="#"><i class="{{ categoria.icono }}" aria hidden="true"></i> {{categoria.nombre}}</a>-->
+                {% endfor %}
+              </nav>
+                <div id="talleres" class="info-curso ocultar clarfix">
+                    
+            
+                <div class="detalle-evento">
+                  {% for evento in eventos %}
+                           <h3>{{ evento.nombre }}</h3>
+                          <p><i class="fa fa-calendar" aria-hidden="true"></i>{{ evento.fecha }}</p>
+                          <p><i class="fa fa-clock" aria-hidden="true"></i>{{ evento.hora }}</p>
+                          <!--<p><i class="fa fa-user" aria-hidden="true"></i> {{ eventos.invitado }}</p>-->
+                          {% endfor %}
+                </div>
+               
+              
+                <!--<div class="detalle-evento">
+                  <h3>Tallado a Mano y maquina</h3>
+                  <p><i class="fa fa-clock" aria-hidden="true"></i>18:00</p>
+                  <p><i class="fa fa-calendar" aria-hidden="true"></i>10 Junio</p>
+                  <p><i class="fa fa-user" aria-hidden="true"></i>Integrantes de Akela</p>
+                </div>
+                  <a href="/calendario" class="button float-right">Ver todos</a>
+              </div>-->
+
+            </div>
+            
+            <!--.programa-evento-->
+          </div><!--.contenedor-->
+        </div><!--.contenido-programa-->
+        <!--################################################################################-->
+  </section><!--.programa-->
+
+<section class=" contenedor seccion">
+  <h2>Algunos de nuestros productos </h2>
+  <ul class="lista-invitados clearfix">
+    <li>
+      <div class="invitado">
+        <img src="../static/img/invitado1.jpg" alt="imagen invitado">
+        <p>Cerámica</p>
+      </div>
+    </li>
+    <li>
+      <div class="invitado">
+        <img src="../static/img/invitado2.jpg" alt="imagen invitado">
+        <p>Calidad</p>
+      </div>
+    </li>
+    <li>
+      <div class="invitado">
+        <img src="../static/img/invitado3.jpg" alt="imagen invitado">
+        <p>Lo mejor</p>
+      </div>
+    </li>
+    <li>
+      <div class="invitado">
+        <img src="../static/img/invitado4.jpg" alt="imagen invitado">
+        <p>Porcelana</p>
+      </div>
+    </li>
+    <li>
+      <div class="invitado">
+        <img src="../static/img/invitado5.jpg" alt="imagen invitado">
+        <p>Buen material</p>
+      </div>
+    </li>
+    <li>
+      <div class="invitado">
+        <img src="../static/img/invitado6.jpg" alt="imagen invitado">
+        <p>Buen material</p>
+      </div>
+    </li>
+  </ul>
+</section><!---->
+
+  <!--<div class="contador parallax">
+    <div class="contenedor">
+      <ul class="resumen-evento clearfix">
+        <li><p class="numero"></p>Invitados</li>
+        <li><p class="numero"></p>Talleres</li>
+        <li><p class="numero"></p>Días</li>
+        <li><p class="numero"></p>Conferencias</li>
+      </ul>
+    </div>
+  </div>Parallax-->
+
+  <section class="precios seccion">
+      <h2>Precios</h2>
+      <div class="conenedor">
+          <ul class="lista-precios clearfix">
+              <li>
+                  <div class="tabla-precio">
+                      <h3>Pase por día</h3>
+                      <p class="numero">$30</p>
+                      <ul>
+                          <li> <i class="fa fa-check-square" aria hidden="true"></i> Bocadillos Gratis</li>
+                          <li> <i class="fa fa-check-square" aria hidden="true"></i> Todas las conferencias</li>
+                          <li> <i class="fa fa-check-square" aria hidden="true"></i> Todos los talleres</li>
+                      </ul>
+                      <a href="/reservaciones" class="button hollow">Comprar</a>
+                  </div>
+              </li>
+
+              <li>
+                  <div class="tabla-precio">
+                      <h3>Todos los días</h3>
+                      <p class="numero">$50</p>
+                      <ul>
+                          <li> <i class="fa fa-check-square" aria hidden="true"></i> Bocadillos Gratis</li>
+                          <li> <i class="fa fa-check-square" aria hidden="true"></i> Todas las conferencias</li>
+                          <li> <i class="fa fa-check-square" aria hidden="true"></i> Todos los talleres</li>
+                      </ul>
+                      <a href="/reservaciones" class="button">Comprar</a>
+                  </div>
+              </li>
+
+              <li>
+                  <div class="tabla-precio">
+                      <h3>Pase por 2 días</h3>
+                      <p class="numero">$45</p>
+                      <ul>
+                          <li> <i class="fa fa-check-square" aria hidden="true"></i> Bocadillos Gratis</li>
+                          <li> <i class="fa fa-check-square" aria hidden="true"></i> Todas las conferencias</li>
+                          <li> <i class="fa fa-check-square" aria hidden="true"></i> Todos los talleres</li>
+                      </ul>
+                      <a href="/reservaciones" class="button hollow">Comprar</a>
+                  </div>
+              </li>
+          </ul>
+      </div>
+      </section><!-- Precios -->
+
+      <div id="mapa" class="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d3760.1418408347245!2d-98.04347388577996!3d19.53552309244519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e2!4m3!3m2!1d19.5362111!2d-98.04206579999999!4m3!3m2!1d19.5363252!2d-98.0419732!5e0!3m2!1ses-419!2smx!4v1560570156683!5m2!1ses-419!2smx" width=100% height="550" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div><!-- Mapa -->
+
+      <section class="seccion">
+          <div class="testimoniales contenedor clearfix">
+           <h2>Testimoniales</h2>
+          {% for invitado in invitados %}
+            <div class="testimonial">  
+              <blockquote>
+                <p>{{ invitado.descripcion }}</p>
+                  <footer class="info-testimonial clearfix">
+                    <img src="../static/Imagen/{{ invitado.imagen }}" alt="imagen testimonial">
+                    <cite>{{ invitado.nombre }} <span>Diseñador en @prisma </span></cite>
+                  </footer>
+                </blockquote>
+               
+            </div>
+            {% endfor %}
+            <!--.Testimonial-->
+           <!-- <div class="testimonial">
+              <blockquote>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ipsa ab, repellendus iure, suscipit
+                  doloribus consectetur eum consequatur eius officiis laudantium, voluptatem dicta? Architecto pariatur
+                  reprehenderit unde nostrum dicta voluptates!</p>
+                  <footer class="info-testimonial clearfix">
+                    <img src="../static/img/testimonial.jpg" alt="imagen testimonial">
+                    <cite>Oswaldo Aponte Escobedo <span>Diseñador en @prisma</span></cite>
+                  </footer>
+              </blockquote>
+            </div><!--.Testimonial-->
+
+            <!--<div class="testimonial">
+              <blockquote>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ipsa ab, repellendus iure, suscipit
+                  doloribus consectetur eum consequatur eius officiis laudantium, voluptatem dicta? Architecto pariatur
+                  reprehenderit unde nostrum dicta voluptates!</p>
+                   <footer class="info-testimonial clearfix">
+                      <img src="../static/img/testimonial.jpg" alt="imagen testimonial">
+                      <cite>Oswaldo Aponte Escobedo <span>Diseñador en @prisma</span></cite>
+                    </footer>
+              </blockquote>
+            </div>-->
+            <!--Testimonial-->
+          </div>
+      </section>
+
+       <div class="newsletter parallax">
+           <div class="contenido contenedor">
+              <p>El único de la región:</p>
+              <h3>Akela Taller de Cerámica</h3>
+              <a href="http://127.0.0.1:5000/admin/login" class="button transparent">Inicia sesión administrador</a>
+           </div> <!--.contenido-->
+        </div><!--.newsletter-->
+
+  <section class="seccion">
+      <h2>Tiempo faltante para el próximo evento</h2>
+     <div class="cuenta-regresiva contenedor">
+         <ul class="clearfix">
+             <li><p id="dias"class="numero"></p> días </li>
+             <li><p id="horas"class="numero"></p> horas </li>
+             <li><p id="minutos"class="numero"></p> minutos </li>
+             <li><p id="segundos"class="numero"></p> segundos </li>
+             </ul>
+           </div>
+  </section><!-- -->
+{% endblock %}
+

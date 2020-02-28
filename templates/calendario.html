@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="seccion contenedor">
+<h2>Calendario de eventos</h2>
+
+<div class="calendario">
+    {% for evento in eventos %}
+  <div class="dia">
+    <p><i class="fa fa-arrow-right" aria-hidden="true"></i> {{ evento.nombre }}</p>
+    <p class="titulo"><i class="fa fa-calendar-alt"></i>  {{ evento.fecha }}</p>
+    <p class="hora"> <i class="fa fa-clock" aria-hidden="true"></i> {{ evento.hora }}</p>
+   <!--<p> <i class="fa fa-user" aria-hidden="true"></i> {{ eventos.invitado }} </p>--> 
+  </div>
+  {% endfor %}
+
+
+</div>
+
+</section>
+
+
+{% endblock %}

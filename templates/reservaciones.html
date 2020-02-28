@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="seccion contenedor">
+    <h2> Registro de Usuarios </h2>
+    <form id="registro" class="registro" method="POST">
+
+      <div id="datos_usuarios" class="registro caja clearfix">
+
+            <div class="campo">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre_registrado" name="nombre_registrado" placeholder="Tu Nombre" required>
+            </div>
+            <div class="campo">
+                <label for="nombre">Apellido:</label>
+                <input type="text" id="apellido_registrado" name="apellido_registrado" placeholder="Tu Primer Apellido" required>
+             </div>
+            <div class="campo">
+               <label for="nombre">Email:</label>
+                <input type="email" id="email_registrado" name="email_registrado" placeholder="tucorreo@tucorreo.com" required>
+            </div>
+              <div id="error"></div>
+          </div><!--Final  datos del usuario-->
+      <div id="paquetes"class="paquetes">
+        <h3>Elije el numero de boletos</h3>
+        <ul class="lista-precios clearfix">
+            <li>
+                <div class="tabla-precio">
+                    <h3>Pase por día (viernes)</h3>
+                    <p class="numero">$30</p>
+                    <ul>
+                        <li>Bocadillos Gratis</li>
+                        <li>Todas las conferencias</li>
+                        <li>Todos los talleres</li>
+                    </ul>
+                    <div class="orden">
+                      <label for="pase_dia">Boletos deseados:</label>
+                      <input type="number" min="0" id="pase_dia" size="3" placeholder="0">
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="tabla-precio">
+                    <h3>Todos los días</h3>
+                    <p class="numero">$50</p>
+                    <ul>
+                        <li>Bocadillos Gratis</li>
+                        <li>Todas las conferencias</li>
+                        <li>Todos los talleres</li>
+                    </ul>
+                    <div class="orden">
+                      <label for="pase_completo">Boletos deseados:</label>
+                      <input type="number" min="0" id="pase_completo" size="3" placeholder="0">
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="tabla-precio">
+                    <h3>Pase por 2 días (viernes y sabado)</h3>
+                    <p class="numero">$45</p>
+                    <ul>
+                        <li>Bocadillos Gratis</li>
+                        <li>Todas las conferencias</li>
+                        <li>Todos los talleres</li>
+                    </ul>
+                    <div class="orden">
+                      <label for="pase_dosdias">Boletos deseados:</label>
+                      <input type="number" min="0" id="pase_dosdias" size="3" placeholder="0">
+                    </div>
+                </div>
+            </li>
+        </ul>
+      </div>
+
+                    <div id="eventos" class="eventos clearfix">
+                                 <h3>Talleres En los que participara, segun el dìa seleccionado</h3>
+                                 <div class="caja">
+                                       <div id="viernes" class="contenido-dia clearfix">
+                                           <h4>Viernes</h4>
+                                               <div>
+                                                   <p>Talleres:</p>
+                                                   <label><time>10:00</time> Pulido</label>
+                                                   <label><time>12:00</time> Tallado a mano</label>
+                                                   <label><time>14:00</time> Teoria de la pintura</label>
+                                                   <label><time>17:00</time> Creando tus propios diseños</label>
+                                                   <label><time>19:00</time> Técnicas avanzadas </label>
+                                               </div>
+                                               <div>
+                                                   <p>Conferencias:</p>
+                                                   <label><time>10:00</time> Aprende con nosotros</label>
+                                                   <label><time>17:00</time> Motivación</label>
+                                                   <label><time>19:00</time> ¿Por qué estudiar cerámica ?</label>
+                                               </div>
+                                               <div>
+                                                   <p>Seminarios:</p>
+                                                   <label><input type="checkbox" id="sem_01" value="sem_01"><time>10:00</time> Modelado en barro</label>
+                                               </div>
+                                       </div> <!--#viernes-->
+                                       <div id="sabado" class="contenido-dia clearfix">
+                                            <h4>Sábado</h4>
+                                                <div>
+                                                    <p>Talleres:</p>
+                                                    <label><time>10:00</time> Pulido</label>
+                                                    <label><time>12:00</time> Tallado a mano</label>
+                                                    <label><time>14:00</time> Teoria de la pintura</label>
+                                                    <label><time>17:00</time> Creando tus propios diseños</label>
+                                                    <label><time>19:00</time> Técnicas avanzadas </label>
+                                                </div>
+                                                <div>
+                                                    <p>Conferencias:</p>
+                                                    <label><time>10:00</time> Aprende con nosotros</label>
+                                                    <label><time>17:00</time> Motivación</label>
+                                                    <label><time>19:00</time> ¿Por qué estudiar cerámica ?</label>
+                                                </div>
+                                                <div>
+                                                    <p>Seminarios:</p>
+                                                    <label><input type="checkbox" id="sem_01" value="sem_01"><time>10:00</time> Modelado en barro</label>
+                                                </div>
+                                        </div> <!--#sabado-->
+                                        <div id="domingo" class="contenido-dia clearfix">
+                                                <h4>Domingo</h4>
+                                                    <div>
+                                                        <p>Talleres:</p>
+                                                        <label><time>10:00</time> Pulido</label>
+                                                        <label><time>12:00</time> Tallado a mano</label>
+                                                        <label><time>14:00</time> Teoria de la pintura</label>
+                                                        <label><time>17:00</time> Creando tus propios diseños</label>
+                                                        <label><time>19:00</time> Técnicas avanzadas </label>
+                                                    </div>
+                                                    <div>
+                                                        <p>Conferencias:</p>
+                                                        <label><time>10:00</time> Aprende con nosotros</label>
+                                                        <label><time>17:00</time> Motivación</label>
+                                                        <label><time>19:00</time> ¿Por qué estudiar cerámica ?</label>
+                                                    </div>
+                                                    <div>
+                                                        <p>Seminarios:</p>
+                                                        <label><input type="checkbox" id="sem_01" value="sem_01"><time>10:00</time> Modelado en barro</label>
+                                                    </div>
+                                            </div> <!--#domingo-->
+                                   </div><!--.caja-->
+                             </div> <!--#eventos-->
+
+        <div id="resumen" class="resumen clearfix">
+          <h3>Pago y Extras</h3>
+         <div class="caja clearfix">
+           <div class="total">
+             <p>Resumen</p>
+             <div id="lista-productos">
+
+             </div>
+             <p>Total</p>
+             <div id="suma-total">
+
+             </div>
+             <input type="hidden" name="total_pagado" id="total_pagado" class="button">
+             <button id="btnRegistro" type="submit" name="submit" class="button">Pagar</button>
+
+           </div>
+             <div id="extras">
+                 <div class="orden">
+                     <label for="camisa_evento">Camisa del evento $100 <small>(Promocion 7% de Descuento)</small></label>
+                     <input type="number" min="0" id="camisa_evento" size="3" placeholder="0">
+                 </div><!--.Orden-->
+                 <div class="orden">
+                     <label for="etiquetas">Paquete de 10 Etiquetas $2</label>
+                     <input type="number" min="0" id="etiquetas" size="3" placeholder="0">
+                 </div><!--.Orden-->
+                 <div class="orden">
+                     <label for="regalo">Seleccione un regalo</label> <br>
+                         <select name="regalo" id="regalo" required>
+                             <option value="">-- Seleccione un regalo --</option>
+                             {% for regalo in regalos %}
+                             <option value="1"> {{ regalo.nombre }}</option>
+                             {% endfor %}
+                             
+                         </select>
+                  </div><!--.Orden-->
+                <input type="button" id="calcular" class="button" value="calcular">
+             </div> <!--extras-->
+           </div><!--caja-->
+        </div><!--RESUMEN-->
+      </form>
+    </section>
+             <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+{% endblock %}

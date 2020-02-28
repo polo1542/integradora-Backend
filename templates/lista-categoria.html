@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <!-- =============================================== -->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+         Listado de categorías de eventos
+        <small></small>
+      </h1>
+   <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Maneja las categorías de los eventos</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="registros" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Icono</th>
+                  <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                  {% for categoria in categorias %}
+                  <tr>
+                     <td>
+                       {{ categoria.nombre }}
+                     </td>
+                       <td>
+                         {{ categoria.icono }}
+                       </td>
+                       <td>
+                         <a href="{{ url_for('categoria.update_categoria', id_categoria=categoria.id) }}" class="btn bg-orange btn-flat margin"><i class="fa fa-pencil"></i>
+                         </a>
+                         <form action="{{url_for('categoria.delete_categoria', id_categoria=categoria.id)}}" method="post">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                            </form>
+                       </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Icono</th>
+                  <th>Acciones</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  {% endblock %}

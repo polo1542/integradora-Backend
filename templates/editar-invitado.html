@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <!-- =============================================== -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Editar invitado
+        <small>Edita los invitados aquí</small>
+      </h1>
+    </section>
+    <div class="row">
+      <div class="col-md-8"> <!--Si cambio el numero nuestro custionario puede disminuir su tamaño-->
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+
+     <div class="box">
+        <div class="box-header with-border">
+          <h3 class="box-title">Editar invitado</h3>
+        </div>
+        <div class="box-body">
+          <!-- form start -->
+          <form role="form" name="crear_invitado" id="crear_invitado" method="POST" enctype="multipart/form-data">
+           {{ form.hidden_tag() }}
+              <div class="box-body">
+                  <div class="form-group">
+                    {{ form.nombre.label }}
+                    {{ form.nombre(class="form-control", placeholder="Nombre del invitado") }}
+                    {% if form.nombre.errors %}
+                    {% for error in form.nombre.errors %}
+                    <P>{{ error }}</P>
+                    {% endfor %}
+                    {% endif %}
+                  </div>
+                  <div class="form-group">
+                      {{ form.apellido.label }}
+                      {{ form.apellido(class="form-control",placeholder="Apellido", type="text") }}
+                      {% if form.apellido.errors %}
+                    {% for error in form.apellido.errors %}
+                    <P>{{ error }}</P>
+                    {% endfor %}
+                    {% endif %}
+                  </div>
+                  <div class="form-group">
+                      {{ form.descripcion.label }}
+                      {{ form.descripcion(class="form-control",placeholder="Descripción") }}
+                      {% if form.descripcion.errors %}
+                    {% for error in form.descripcion.errors %}
+                    <P>{{ error }}</P>
+                    {% endfor %}
+                    {% endif %}
+                  </div>
+                  <div class="form-group">
+                    {{ form.imagen.label }}
+                    {{ form.imagen(class="form-control",placeholder="Imagen") }}
+                    {% if form.imagen.errors %}
+                    {% for error in form.imagen.errors %}
+                    <P>{{ error }}</P>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <input type="hidden" name="agregar-admin" value="1">
+                {{ form.submit(class="btn btn-primary") }}
+              </div>
+          </form>
+        </div>  
+        </div>
+        <!-- /.box-body -->
+
+      </div>
+      <!-- /.box -->
+
+    </section>
+    <!-- /.content -->
+      </div>
+    </div>
+  </div>
+  <!-- /.content-wrapper -->
+
+  {% endblock %}

@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <!-- =============================================== -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Editar la categoría seleccionada
+        <small>Puedes editar la categoría aquí</small>
+      </h1>
+    </section>
+    <div class="row">
+      <div class="col-md-8"> <!--Si cambio el numero nuestro custionario puede disminuir su tamaño-->
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+
+     <div class="box">
+        <div class="box-header with-border">
+          <h3 class="box-title">Editar categoría</h3>
+        </div>
+        <div class="box-body">
+          <!-- form start -->
+      <form role="form" name="crear_categoria" id="crear_categoria" method="POST">
+      {{ form.hidden_tag() }}
+        <div class="box-body">
+          <!-- form start -->
+            <form role="form" name="crear_categoria" id="crear_admin" method="post" action="">
+              <div class="box-body">
+                <div class="form-group">
+                  {{ form.nombre.label }}
+                  {{ form.nombre(class="form-control", placeholder="Nombre de la categoria") }}
+                </div>
+                <div class="form-group">
+                    {{ form.icono.label }}
+                    {{ form.icono(class="form-control",placeholder="Icono", type="text") }}
+                </div>
+
+              </div>
+              <!-- /.box-body -->
+
+              <div class="box-footer">
+                <input type="hidden" name="agregar-admin" value="1">
+                {{ form.submit(class="btn btn-primary") }}
+              </div>
+        </div>
+        <!-- /.box-body -->
+
+      </div>
+      <!-- /.box -->
+
+    </section>
+    <!-- /.content -->
+      </div>
+    </div>
+  </div>
+  <!-- /.content-wrapper -->
+
+{% endblock %}

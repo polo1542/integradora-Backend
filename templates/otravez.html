@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <!-- =============================================== -->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Crear categorías de eventos
+        <small>Llena el formulario para crear una categoría</small>
+      </h1>
+    </section>
+    <div class="row">
+      <div class="col-md-8"> <!--Si cambio el numero nuestro custionario puede disminuir su tamaño-->
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+
+     <div class="box">
+        <div class="box-header with-border">
+          <h3 class="box-title">Crear categoría</h3>
+        </div>
+        <div class="box-body">
+          <!-- form start -->
+            <form role="form" name="crear_admin" id="crear_categoria" method="post" action="insertar_admin.php">
+              <div class="box-body">
+                  <div class="form-group">
+                      <label for="usuario">Nombre:</label>
+                      <input type="text" class="form-control" id="nombre_registrado" name="nombre" placeholder="nombre">
+                  </div>
+                  <div class="form-group">
+                      <label for="Apellido">Apellido:</label>
+                      <input type="text" class="form-control" id="Apellido" name="Apellido" placeholder="Apellido">
+                  </div>
+                  <div class="form-group">
+                      <label for="email">Email:</label>
+                      <input type="text" class="form-control" id="email" name="email" placeholder="email">
+                  </div>
+                  <div class="form-group">
+                      <div id="paquetes"class="paquetes">
+                        <h3>Elije el numero de boletos</h3>
+                          <ul class="lista-precios clearfix">
+                              <li>
+                                  <div class="tabla-precio">
+                                    <h3>Pase por día (viernes)</h3>
+                                    <p class="numero">$30</p>
+                                <ul>
+                                    <li>Bocadillos Gratis</li>
+                                    <li>Todas las conferencias</li>
+                                    <li>Todos los talleres</li>
+                                </ul>
+                                    <div class="orden">
+                                    <label for="pase_dia">Boletos deseados:</label>
+                                    <input type="number" min="0" id="pase_dia" size="3" placeholder="0">
+                                  </div>
+                              </div>
+                          </li>
+                          <li>
+                <div class="tabla-precio">
+                    <h3>Todos los días</h3>
+                    <p class="numero">$50</p>
+                    <ul>
+                        <li>Bocadillos Gratis</li>
+                        <li>Todas las conferencias</li>
+                        <li>Todos los talleres</li>
+                    </ul>
+                    <div class="orden">
+                      <label for="pase_completo">Boletos deseados:</label>
+                      <input type="number" min="0" id="pase_completo" size="3" placeholder="0">
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="tabla-precio">
+                    <h3>Pase por 2 días (viernes y sabado)</h3>
+                    <p class="numero">$45</p>
+                    <ul>
+                        <li>Bocadillos Gratis</li>
+                        <li>Todas las conferencias</li>
+                        <li>Todos los talleres</li>
+                    </ul>
+                    <div class="orden">
+                      <label for="pase_dosdias">Boletos deseados:</label>
+                      <input type="number" min="0" id="pase_dosdias" size="3" placeholder="0">
+                    </div>
+                </div>
+            </li>
+        </ul>
+      </div>
+                  </div>
+                      <div class="form-group">
+                            <div id="resumen" class="resumen clearfix">
+        <h3>Pago y Extras</h3>
+        <div class="caja clearix">
+              <div id="extras">
+                  <div class="orden">
+                    <label for="camisa_evento">Camisa del evento $100 <small>(Promocion 7% de Descuento)</small></label>
+                    <input type="number" min="0" id="camisa_evento" size="3" placeholder="0">
+                  </div>
+              <div class="orden">
+                  <label for="etiquetas">Paquete de 10 Etiquetas $25 <small>(Promocion 7% de Descuento)</small></label>
+                  <input type="number" min="0" id="camisa_evento" size="3" placeholder="0">
+              </div>
+              <div class="orden">
+                  <label for="regalo">Seleccione un regalo</label>
+                  <select name="regalo" id="regalo" required>
+                      <option value="">-- Seleccione un regalo --</option>
+                      <option value="ETI">Etiquetas</option>
+                      <option value="PLU">Pulsera</option>
+                      <option value="Plumas">Plumas</option>
+                  </select>
+              </div>
+              <input type="button" id="calcular" class="button" value="calcuar">
+            </div>
+            <div id="total">
+                <p>resumen</p>
+                <div id="lista-productos">
+                    <p>Total</p>
+                    <div id="suma-total">
+
+                    </div>
+                    <input id="btnRegistro" type="submit" class="button" value="Pagar">
+
+                  </div>
+                  </div>
+              </div>
+                  </div>
+              </div>
+              <!-- /.box-body -->
+
+              <div class="box-footer">
+                <input type="hidden" name="agregar-admin" value="1">
+                <button type="submit" class="btn btn-primary">Añadir</button>
+              </div>
+        </div>
+        <!-- /.box-body -->
+
+      </div>
+      <!-- /.box -->
+
+    </section>
+    <!-- /.content -->
+      </div>
+    </div>
+  </div>
+  <!-- /.content-wrapper -->
+  {% endblock %}

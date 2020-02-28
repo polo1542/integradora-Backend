@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html  lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}{% endblock%}</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome-all.min.css') }}">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <meta name="theme-color" content="#fafafa">
+
+</head>
+    <body>
+
+      <header class="site-header">
+        <div class="hero">
+          <div class="contenido-header">
+              <nav class="redes-sociales">
+                  <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                  <a href="https://www.pinterest.com.mx/"><i class="fab fa-pinterest-p"></i></a>
+                  <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                  <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+              </nav>
+              <div class="información-evento">
+                    <div class="clearfix">
+                        <p class="ciudad"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Tlaxcala. MX</p>
+                      </div>
+              <h1 class="nombre-sitio">Akela </h1>
+              <p class="slogan">Taller de ceramica <span>"Tierra y fuego"</span></p>
+              </div><!--.información-evento-->
+
+          </div>
+        </div><!--.hero-->
+
+      </header>
+      <div class="barra">
+          <div class="contenedor clearfix">
+              <div class="logo">
+                <a href="/">  <img src="../static/img/logo.png" alt="logo Akela"> </a>
+              </div>
+
+              <div class="menu-movil">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </div>
+
+              <nav class="navegacion-principal clearfix">
+                  <a href="{{ url_for('core.conferencia') }}">Conferencia</a>
+                  <a href="{{ url_for('core.calendario') }}">Calendario</a>
+                  <a href="{{ url_for('core.invitados') }}">Invitados</a>
+                  <a href="{{ url_for('core.reservaciones') }}">Reservaciones</a>
+              </nav>
+          </div>
+      </div>
+
+
+      {% block content %}
+
+
+      {% endblock %}
+<script src="{{ url_for('static', filename='../static/js/jquery.animateNumber.min.js') }}"></script>
+<footer class="site-footer">
+        <div class="contenedor clearfix">
+             <div class="footer-informacion">
+                  <h3>Sobre <span>AKELA Taller de Ceramica</span></h3>
+                  <p>Empresa 100% Mexicana, en donde nos dedicamos a enseñar el valor de la ceramica como
+                    un arte, una forma de expresion de nuestros alumnos y clientes
+                  </p>
+               </div>
+               <div class="ultimos-tweets">
+                  </div>
+                  <div class="menu">
+                        <h3>Redes <span>sociales</span></h3>
+                        <nav class="redes-sociales">
+                            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.pinterest.com.mx/"><i class="fab fa-pinterest-p"></i></a>
+                            <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                              </nav>
+                         </div>
+                  </div>
+                  <p class="copyright">
+                    Todos los derechos Reservados AKELA Taller de Ceramica 2019.
+                  </p>
+     </footer>
+     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+       <script src="{{ url_for('static', filename='../static/js/vendor/modernizr-3.7.1.min.js') }}"></script>
+       <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+       <script src="{{ url_for('static', filename='../static/js/plugins.js') }}"></script>
+       <script src="{{ url_for('static', filename='../static/js/main.js') }}"></script>
+       <script type=text/javascript src="{{url_for('static', filename='../static/js/vendor/jquery-3.4.1.min.js') }}"></script>
+       <script src="{{ url_for('static', filename='../static/js/jquery.countdown.min.js') }}"></script>
+       <script src="{{ url_for('static', filename='../static/js/jquery.animateNumber.min.js') }}"></script>
+   <!--  <script>window.jQuery || document.write('<script src="{{url_for('static', filename='../static/js/vendor/jquery-3.4.1.min.js') }}">\x3C/script>')</script>-->
+
+ <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+ <script>
+   window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+   ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+ </script>
+ <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

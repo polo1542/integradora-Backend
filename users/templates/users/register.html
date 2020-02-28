@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block title %}Admin Site{% endblock %}
+{% block header %}
+<div class="col-lg-8 col-md-10 mx-auto">
+    <div class="site-heading">
+      <h1>Admin</h1>
+      <span class="subheading">Register</span>
+    </div>
+  </div>
+{% endblock %}
+{% block content %}
+<section class="seccion contenedor">
+    <h2> Registro de Usuarios </h2>
+    <div class="content">
+         <div class="row justify-content-center">
+        <div class="col-6">
+            <form method="POST">
+                    <div id="datos_usuarios" class="registro caja clearfix">
+                        {{ form.hidden_tag() }}
+                        <div class="campo">
+                            <div class="form-group">
+                                {{ form.email.label(class="form-control-label") }}
+                                {{ form.email(class="form-control") }}
+                                {% if form.email.errors %}
+                                    {% for error in form.email.errors %}
+                                        <p class="text-danger">{{ error }}</p>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                         </div>
+                         <div class="campo">
+                            <div class="form-group">
+                                {{ form.username.label(class="form-control-label") }}
+                                {{ form.username(class="form-control") }}
+                                {% if form.username.errors %}
+                                    {% for error in form.username.errors %}
+                                        <p class="text-danger" color="red">{{ error }}</p>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="campo">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    {{ form.password.label(class="form-control-label") }}
+                                    {{ form.password(class="form-control") }}
+                                </div>
+                        </div>
+                            <div class="campo">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    {{ form.pass_confirm.label(class="form-control-label") }}
+                                    {{ form.pass_confirm(class="form-control") }}
+                                </div>
+                            </div>
+                            </div>
+
+                            {% if form.password.errors %}
+                                {% for error in form.password.errors %}
+                                    <p class="text-danger ml-2">{{ error }}</p>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                        <div class="campo">
+                                {{ form.submit(class="btn btn-block btn-success button") }}
+                                </div>
+        
+                        </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

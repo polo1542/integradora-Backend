@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <!-- =============================================== -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+         Listado de regalos
+        <small>Aquí podrás editar y borrar lo regalos</small>
+      </h1>
+    <!-- Main content -->
+   <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Maneja los regalos en esta sección</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="registros" class="table table-bordered table-striped"><!--################-->
+                <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                  {% for regalo in regalos %}
+                  <tr>
+                     <td>
+                       {{ regalo.nombre }}
+                     </td>
+                     <td>
+                         <a href="{{ url_for('regalo.update_regalo', id_regalo=regalo.id) }}" class="btn bg-orange btn-flat margin"><i class="fa fa-pencil"></i>
+                         </a>
+                         <form action="{{url_for('regalo.delete_regalo', id_regalo=regalo.id)}}" method="post">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                            </form>
+                       </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Acciones</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  {% endblock %}
